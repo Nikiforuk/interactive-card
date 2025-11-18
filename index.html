@@ -11,16 +11,56 @@
   <div class="wrapper">
     <main class="main">
       <section class="content">
-        <div class="dragons__card">
-          <img src="assets/images/dragon-black.png" class="dragons__card-img" alt="dragon-image"></img>
-        </div>
-        <div class="dragons__card">
-          <img src="assets/images/dragon-red.png" class="dragons__card-img" alt="dragon-image"></img>
-        </div>
-        <div class="dragons__card">
-          <img src="assets/images/dragon-purple.png" class="dragons__card-img" alt="dragon-image"></img>
-        </div>
+      <div class="dragons__card" data-sound="assets/sounds/dragon-voice.mp3">
+      <div class="dragons__card-side is-active">
+        <img
+          src="assets/images/dragon-black.png"
+          class="dragons__card-img"
+          alt="dragon-image"
+        />
+      </div>
+      <div class="dragons__card-side">
+        <img 
+          src="assets/images/dragon-black-little.png"
+          class="dragons__card-img" 
+          alt="dragon-image"
+        />
+      </div>
+      </div>
+      <div class="dragons__card" data-sound="assets/sounds/dragon-voice.mp3">
+      <div class="dragons__card-side is-active">
+        <img
+          src="assets/images/dragon-red.png"
+          class="dragons__card-img"
+          alt="dragon-image"
+        />
+      </div>
+      <div class="dragons__card-side">
+        <img 
+          src="assets/images/dragon-red-little.png"
+          class="dragons__card-img" 
+          alt="dragon-image"
+        />
+    </div>
+    </div>
+    <div class="dragons__card" data-sound="assets/sounds/dragon-voice.mp3">
+      <div class="dragons__card-side is-active">
+        <img
+          src="assets/images/dragon-purple.png"
+          class="dragons__card-img"
+          alt="dragon-image"
+        />
+      </div>
+      <div class="dragons__card-side">
+        <img 
+          src="assets/images/dragon-purple-little.png"
+          class="dragons__card-img" 
+          alt="dragon-image"
+        />
+      </div>
+      </div>
       </section>
+      <button class="toggle-btn">Dark Mode</button>
     </main>
   </div>
   <script src="/main.js"></script>
