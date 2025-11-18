@@ -6,8 +6,6 @@
 html, body {
   margin: 0;
   height: 100%;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
   color: var(--white);
 }
 
@@ -15,4 +13,36 @@ img,
 picture {
   display: block;
   max-width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: url('assets/images/background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.dragons__card {
+  border: 12px solid var(--black);
+  border-radius: 12px;
+}
+
+.dragons__card-img {
+  max-width: 600px;
+  max-height: 450px;
 }
