@@ -1,13 +1,30 @@
 :root {
   --white: #ffffff;
   --black: #000000;
+  --red: rgb(193, 30, 30);
+  --gold: rgb(254, 169, 26);
 }
 
 html, body {
   margin: 0;
   height: 100%;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  color: var(--white);
+}
+
+body {
+  background-image: url('assets/images/background-light.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+body.dark-theme {
+  background-image: url("assets/images/background-dark.png");
+}
+
+body.dark-theme button {
   color: var(--white);
 }
 
@@ -15,4 +32,160 @@ img,
 picture {
   display: block;
   max-width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.dragons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.dragons__card {
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.dragons__card-side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 12px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+}
+
+.dragons__card-side:nth-child(2) {
+  transform: rotateY(180deg);
+}
+
+.dragons__card:hover .dragons__card-side.is-active {
+  transform: rotateY(180deg);
+}
+
+.dragons__card:hover .dragons__card-side:nth-child(2) {
+  transform: rotateY(0deg);
+}
+
+.dragons__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.toggle-btn {
+  position: absolute;
+  border: 4px solid var(--gold);
+  border-style: dotted;
+  border-radius: 6px;
+  background: var(--black);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  width: 150px;
+  height: 50px;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--gold);
+}
+
+.toggle-btn:hover {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1440px) {
+  .dragons__card {
+    width: 400px;
+    height: 400px;
+  }
+
+  .dragons {
+    gap: 30px;
+  }
+
+  .toggle-btn {
+    width: 130px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1650px) {
+  .dragons {
+    flex-wrap: wrap;
+  }
+
+  .dragons__card {
+    width: 400px;
+    height: 400px;
+  }
+
+  .dragons {
+    gap: 30px;
+  }
+
+  .toggle-btn {
+    width: 130px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dragons__card {
+    width: 300px;
+    height: 300px;
+  }
+
+  .dragons {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .toggle-btn {
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dragons__card {
+    width: 200px;
+    height: 200px;
+  }
+
+  .dragons {
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toggle-btn {
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    right: 15px;
+    top: 15px;
+  }
 }
