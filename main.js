@@ -1,18 +1,19 @@
 'use sctrict';
 
 const toggleBtn = document.querySelector('.toggle-btn');
-const cards = document.querySelectorAll('.dragons__card');
+const cardsContainer = document.querySelector('.dragons');
 
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark-theme');
 });
 
-cards.forEach((card) => {
-  const soundSrc = card.dataset.sound;
-  const audio = new Audio(soundSrc);
+cardsContainer.addEventListener('mouseenter', (e) => {
+  const card = e.target.closest('.dragons__card');
 
-  card.addEventListener('mouseenter', () => {
+  if (card) {
+    const soundSrc = card.dataset.sound;
+    const audio = new Audio(soundSrc);
     audio.currentTime = 0;
     audio.play();
-  });
-});
+  }
+}, true);
