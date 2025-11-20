@@ -60,7 +60,6 @@ picture {
   perspective: 1000px;
   position: relative;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .dragons__card-side {
@@ -71,19 +70,21 @@ picture {
   overflow: hidden;
   backface-visibility: hidden;
   transition: transform 0.6s;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .dragons__card-side:nth-child(2) {
   transform: rotateY(180deg);
 }
 
-.dragons__card:hover .dragons__card-side.is-active {
+.dragons__card.flipped .dragons__card-side:nth-child(1) {
   transform: rotateY(180deg);
 }
 
-.dragons__card:hover .dragons__card-side:nth-child(2) {
+.dragons__card.flipped .dragons__card-side:nth-child(2) {
   transform: rotateY(0deg);
 }
+
 
 .dragons__card-img {
   width: 100%;
